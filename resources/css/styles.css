@@ -1,0 +1,289 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 0;
+    position: relative;
+}
+
+.row:nth-child(even) {
+    background-color: lightgray;
+}
+
+.row:last-of-type {
+    background-color: dimgray;
+}
+
+.flex-center-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-center-space {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card {
+    background-color: black;
+    box-shadow: 3px 4px 10px 2px gray;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+}
+
+.card p {
+    margin: 2em;
+}
+
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    text-decoration: underline;
+    color: initial;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    margin: 1em;
+}
+
+.navbar {
+    grid-column: 1 / span 12;
+    height: 100px;
+}
+
+.navbar ul {
+    padding: 0;
+    margin-top: 40px;
+}
+
+.navbar li, .navbar a {
+    font-size: 20px;
+}
+
+#banner {
+    min-height: 60vh;
+    grid-column: 1 /span 7;
+}
+
+#mission {
+    min-height: 60vh;
+    grid-column: 8 / span 5;
+}
+
+#portfolio-statement {
+    min-height: 80vh;
+    grid-column: 1 / span 4;
+}
+
+#portfolio-container {
+    min-height: 80vh;
+    grid-column: 5 / span 8;
+}
+
+.portfolio-item {
+    height: 300px;
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.portfolio-img {
+    height: 70%;
+    width: 100%;
+}
+
+.portfolio-item p {
+    margin: 1.25em;
+}
+
+.team-statement {
+    min-height: 80vh;
+    grid-column: 1 / span 3;
+}
+
+#team {
+    min-height: 80vh;
+    grid-column: 4 / span 9;
+}
+
+.team-member {
+    height: 500px;
+    width: 300px;
+}
+
+.team-member img {
+    height: 70%;
+    width: 100%;
+}
+
+#contact {
+    min-height: 25vh;
+    grid-column: 1 /span 12;
+    position: relative;
+}
+
+.footer-links {
+    flex-direction: column;
+    align-items: start;
+}
+
+#contact ul {
+    margin: 0;
+    display: block;
+}
+
+#contact li {
+    margin: 5px;
+    font-size: 12px;
+}
+
+.social {
+    width: 40px;
+    display: inline-block;
+    margin: 20px;
+}
+
+.social img {
+    width: 100%;
+}
+
+.icon-credit {
+    position: absolute;
+    font-size: 10px;
+    width: 220px;
+    left: calc(50% - 110px);
+    top: 90%;
+    text-align: center;
+}
+
+.icon-credit a {
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+    #banner {
+        grid-column: 1 /span 12;
+        min-height: calc(40vh - 50px);
+    }
+    #banner::after {
+        content: "";
+        position: absolute;
+        min-height: calc(40vh - 50px);
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+    #mission {
+        grid-column: 1 / span 12;
+        position: absolute;
+        color: white;
+        text-align: center;
+        min-height: calc(40vh - 50px);
+        padding: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+    }
+    #portfolio-statement {
+        min-height: calc(25vh - 40px);
+        grid-column: 1 / span 12;
+    }
+    #portfolio-container {
+        min-height: 35vh;
+        grid-column: 1 / span 12;
+    }
+    .card {
+        box-shadow: none;
+        font-size: 14px;
+    }
+    .portfolio-item {
+        height: 100%;
+        width: 25%;
+    }
+    .team-statement {
+        min-height: 15vh;
+        grid-column: 1 / span 12;
+    }
+    #team {
+        min-height: 60vh;
+        grid-column: 1 / span 12;
+    }
+    .team-member {
+        height: 100%;
+        width: 33.3%;
+    }
+    .social {
+        width: 60px;
+    }
+    .icon-credit {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #banner {
+        min-height: 360px;
+    }
+    #banner::after {
+        min-height: 360px;
+    }
+    #mission {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        min-height: 360px;
+        width: 100%;
+    }
+    #portfolio-container {
+        height: fit-content;
+        flex-direction: column;
+    }
+    .portfolio-item {
+        height: 100%;
+        width: 100%;
+    }
+    #team {
+        height: fit-content;
+        flex-direction: column;
+    }
+    .team-member {
+        min-height: 100vh;
+        width: 100%;
+    }
+    .team-member img {
+        min-height: 90vh;
+    }
+    .social {
+        width: 40px;
+        flex-shrink: 1;
+    }
+}
